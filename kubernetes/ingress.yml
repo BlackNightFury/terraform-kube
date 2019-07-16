@@ -5,6 +5,7 @@ metadata:
   namespace: kube-test
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   rules:
   - http:
@@ -13,3 +14,7 @@ spec:
         backend:
           serviceName: my-service
           servicePort: 443
+  tls:
+  - secretName: kube-test-secret
+      hosts:
+      - kubetest.com

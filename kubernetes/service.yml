@@ -4,14 +4,15 @@ metadata:
   name: my-service
   namespace: kube-test
 spec:
+  type: LoadBalancer
   selector:
     app: webapp
   ports:
-  - name: http
-    protocol: TCP
-    port: 80
-    targetPort: 80
-  - name: https
-    protocol: TCP
-    port: 443
-    targetPort: 80
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+    - name: https
+      protocol: TCP
+      port: 443
+      targetPort: 80

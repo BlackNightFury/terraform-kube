@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: helloapp-deployment
   namespace: kube-test
   labels:
     app: webapp
@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: nginxdemos/hello
+        image: hello-world
         ports:
         - containerPort: 80
